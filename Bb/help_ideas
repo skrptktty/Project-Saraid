@@ -1,0 +1,13 @@
+man
+info
+help
+
+program_name --help
+{man , info} program_name = program_name help
+
+program_name help
+program_name qhelp
+
+all help documents shall be in API Open Help Document Format
+shall display in a unique, yet consistant manner no matter which command is called or from where
+when open current screen shall have transperancy = to 80% or better
