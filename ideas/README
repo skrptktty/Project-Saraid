@@ -1,0 +1,37 @@
+README
+
+Some Random Implementation Ideas
+
+On demand encryption ::
+	The concept is anything and everything can be encrypted
+	- You choose how much encryption is enabled
+	- Kernel code is "encrypted" in such a way as to obfuscate
+	it from user code.
+	- Proprietary code is encrypted and decrypted on runtime
+	- Encryption is a requirement
+	*** Encryption might not be the right word ***
+
+On the fly decompression ::
+	The concept is that everything is sitting in stasis waiting to run.
+	- When executed it is decompressed to a specific location and executes.
+	- When closed it is removed from its decompressed location.
+
+A "smart" dock ::
+	The concept is a revamped dock application allowing for:
+	- Grouped programs to be staged
+	- A program menu at the bottom left
+	- Auto-hide enabled on default
+	- Panels for left screen, right screen, and bottom of screen
+
+GUI Tools ::
+	The concept is all tools _will_ have a powerful GUI frontend
+	- The GUI Tools for once should as powerful as their CLI counterparts
+	- The emphasis should be on ease of use
+	- Make available differant skill versions for each tool, enabled within
+	the menu options
+
+Conversion Program ::
+	The concept is a conversion program built into the compiler
+	- Convert from popular programming languages
+	- Port opensource Linux programs to our system
+	- Make porting other programs to our system easy
