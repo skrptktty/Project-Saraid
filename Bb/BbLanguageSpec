@@ -15,41 +15,59 @@ Foreword
 
 Foreword:
 
-There is no leadership such as the communitee as such Project Saraid has set forth the Technology and Communication Standards Association.  All members signing up to work with and alongside the TCSA agree to abide by all standards and guidelines outlined by the Association.  This is the first standard officially released by the TCSA that outlines a programming language for the communittee.
+There is no leadership such as the communitee as such Project Saraid has set forth the Technology and Communication
+Standards Association.  All members signing up to work with and alongside the TCSA agree to abide by all standards and
+guidelines outlined by the Association.  This is the first standard officially released by the TCSA that outlines a
+programming language for the communittee.
 
 Part 1: General
 
 1.1: Scope
 
-Bb, Bb+, and Bb++ shall all be governed by this standard.  Anyone implementing any iteration of this language shall follow the strict guidelines as outlined within this standard.  Bb, Bb+, and Bb++ are general purpose programming languages, loosely based all various aspects of modern programming languages that came before it.  As Bb+ and Bb++ are derivatives of Bb and require Bb implementation to work it is necessary for us to define all three within the scope of this document.
+Bb, Bb+, and Bb++ shall all be governed by this standard.  Anyone implementing any iteration of this language shall
+follow the strict guidelines as outlined within this standard.  Bb, Bb+, and Bb++ are general purpose programming
+languages, loosely based all various aspects of modern programming languages that came before it.  As Bb+ and Bb++ are
+derivatives of Bb and require Bb implementation to work it is necessary for us to define all three within the scope of
+this document.
 
 1.2: Implementation Compliance
 
 ~ 1.2.1 ~
-The set of diagnosable rules consists of all syntactic and semantic rules in this Standard except for those rules containing an explicit notation that "no diagnostic is required" %% change this %%.
+The set of diagnosable rules consists of all syntactic and semantic rules in this Standard except for those rules
+containing an explicit notation that "no diagnostic is required" %% change this %%.
 
 ~ 1.2.2 ~
-This standard states requirements on Bb and its derivatives implementations, including but not limited to; requirements on programs, parts of programs, or implementation of programs.  The standard requires the following:
+This standard states requirements on Bb and its derivatives implementations, including but not limited to; requirements
+on programs, parts of programs, or implementation of programs.  The standard requires the following:
 
-	- If a program contains no violations of the rules in this standard, a conforming implementation shall, within resource limits, accept and uniformly and correctly execute said program
-	- If a program contains a violation of any rule, a conforming implementation shall issue at least one concise diagnostic message.
+	- If a program contains no violations of the rules in this standard, a conforming implementation shall, within
+	  resource limits, accept and uniformly and correctly execute said program
+	- If a program contains a violation of any rule, a conforming implementation shall issue at least one concise
+	  diagnostic message.
 
 ~ 1.2.3 ~
 For classes, class templates, functions, function templates, objects and values:
 	- The library clauses specify core definitions with which to build complete classes.
-	- Each implementation shall supply additional definitions according to the description of the library clauses in order to build compliant objects.
+	- Each implementation shall supply additional definitions according to the description of the library clauses in
+	  order to build compliant objects.
 
 ~ 1.2.4 ~
-The names defined in the language library have namespace scope.  A language translation unit obtains access to these names by including the appropriate standard library headers.
+The names defined in the language library have namespace scope.  A language translation unit obtains access to these
+names by including the appropriate standard library headers.
 
 ~ 1.2.5 ~
-The templates, classes, functions, and objects in the library have external linkage.  The implementation shall provide definitions for standard library entities, while combining translation units to form a standards compliant program.
+The templates, classes, functions, and objects in the library have external linkage.  The implementation shall provide
+definitions for standard library entities, while combining translation units to form a standards compliant program.
+%% reword this %%
 
 ~ 1.2.6 ~
-Two kinds of implementations are defined: static and dynamic.  In a dynamic implementation the libraries are provided by implementation, whereas within a static environment, where the libraries are provided by the host environment.
+Two kinds of implementations are defined: static and dynamic.  In a dynamic implementation the libraries are provided by
+implementation, whereas within a static environment, where the libraries are provided by the host environment.
 
 ~ 1.2.7 ~
-The standard shall provide a method for adding extensions.  Extensions are to be included in any implementation as long as they do not violate the standards outlined within these standards.  Ill-formed extensions are unable to run within Standard compliant implementations.
+The standard shall provide a method for adding extensions.  Extensions are to be included in any implementation as long
+as they do not violate the standards outlined within these standards.  Ill-formed extensions are unable to run within
+Standard compliant implementations.
 
 1.3: Structure of this Standard
 
@@ -65,27 +83,36 @@ The standard shall provide a method for adding extensions.  Extensions are to be
 1.9: Bb++
 
 1.10: Acknowledgments
-The Bb Standard is based on those before it.  With special recognition to the ISO Standard C++, W3C's HTML5 and CSS3, Google GO devs, and the Python Devs.  It is from these standards that Bb was born.
+The Bb Standard is based on those before it.  With special recognition to the ISO Standard C++, W3C's HTML5 and CSS3,
+Google GO devs, and the Python Devs.  It is from these standards that Bb was born.
 
-Without the community this would be a dead project and so the Standard wishes to acknowledge all the members of the Bb community.
+Without the community this would be a dead project and so the Standard wishes to acknowledge all the members of the Bb
+community.
 
 All rights reserved.
 
 Part 2: The Source Code
 
-Source Code is in Unicode text encoded in UTF-8.  Each code point is unique, for instance upper and lower case letters are differant characters.  The NUL character (U+0000) is valid within the source code.
+Source Code is in Unicode text encoded in UTF-8.  Each code point is unique, for instance upper and lower case letters
+are differant characters.  The NUL character (U+0000) is valid within the source code.
 
 2.1: Import Function
 
-For extensions and mods to be built into programs and code reuse Bb is taking a similar approach to C++ and Python in the import command.  This command shall be the second line of each program that needs to reuse code from other programs or needs to load other programs.  Thats where the similarities end, the import command is just one word 'import', and tells the program that it needs to look in the root folder for the import file for a list of additional libraries and programs needed to build/run the program.
+For extensions and mods to be built into programs and code reuse Bb is taking a similar approach to C++ and Python in
+the import command.  This command shall be the second line of each program that needs to reuse code from other programs
+or needs to load other programs.  Thats where the similarities end, the import command is just one word 'import', and
+tells the program that it needs to look in the root folder for the import file for a list of additional libraries and
+programs needed to build/run the program.
 
 2.2: Comments
 
-All comments shall start with the character sequence %% and continue through the character sequence %%.  Comments act as newlines when they span more than one line and spaces when they don't.
+All comments shall start with the character sequence %% and continue through the character sequence %%.  Comments act as
+newlines when they span more than one line and spaces when they don't.
 
 Part 3: EBNF Definitions
 
-Program = '@@Program:' , whitespace , 'identifier' , '@@' , whitespace , 'import' , whitespace , ':: main ::' , program_source , ':: /main ::'
+Program = '@@Program:' , whitespace , 'identifier' , '@@' , whitespace , 'import' , whitespace , ':: main ::'
+, program_source , ':: /main ::'
 
 Part 4: Acceptable Unicode within Source Code
 
