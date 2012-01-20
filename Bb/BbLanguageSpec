@@ -1,6 +1,7 @@
 Programming Languages --- Bb
 Written by: Project Saraid Team
-License: Modified BSD
+License: Modified BSD/APIL 0.1
+
 ------------------------------------------
 
 Foreword
@@ -96,7 +97,22 @@ Part 2: The Source Code
 Source Code is in Unicode text encoded in UTF-8.  Each code point is unique, for instance upper and lower case letters
 are differant characters.  The NUL character (U+0000) is valid within the source code.
 
-2.1: Import Function
+2.1: Source Folder Layout
+
+Reason for this section: All source code shall appear the same so that anyone new to the programming shall be able to
+pick up a piece of code and know where to find the differant parts of the program.
+
+	<root>
+		import	- this is a single text file (without file extension)(see 2.2: Import Function)
+		main.bb - this can be named anything *.bb (this is the main program)
+		core/ 	- this is the core folder for any <header> files and <library> files needed for core functioning
+		mod/	- this is for any modules added as part of the original core, this should mod the core only
+		ext/	- this is for any extensions, mostly for extension creators
+		ppy/	- this is for any proprietary code, note proprietary code should be placed here, two reasons:
+			  one - the compiler encrypts all data with the ppy_enc library, two - this doesn't have to be
+			  included when the software's source code is released, all other directories shall be.
+
+2.2: Import Function
 
 For extensions and mods to be built into programs and code reuse Bb is taking a similar approach to C++ and Python in
 the import command.  This command shall be the second line of each program that needs to reuse code from other programs
@@ -104,10 +120,31 @@ or needs to load other programs.  Thats where the similarities end, the import c
 tells the program that it needs to look in the root folder for the import file for a list of additional libraries and
 programs needed to build/run the program.
 
-2.2: Comments
+The import file shall be formatted:
+
+	:: core ::
+		core/1.*	@@ comment @@
+		...
+		core/10.*	@@ comment @@
+	:: mods ::
+		mod/1.*		@@ comment @@
+		...
+		mod/10.*	@@ comment @@
+	:: exts ::
+		ext/1.*		@@ comment @@
+		...
+		ext/10.*	@@ comment @@
+	:: ppy ::
+		ppy/1.*		@@ comment @@
+		...
+		ppy/10.*	@@ comment @@
+
+this specification requires extensive comments thus source editors can decide it they are necessary or not.
+
+2.3: Comments
 
 All comments shall start with the character sequence %% and continue through the character sequence %%.  Comments act as
-newlines when they span more than one line and spaces when they don't.
+newlines when they span more than one line and spaces when they don't.  Comments are required!
 
 Part 3: EBNF Definitions
 
