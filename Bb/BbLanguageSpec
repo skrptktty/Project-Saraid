@@ -111,7 +111,7 @@ newlines when they span more than one line and spaces when they don't.
 
 Part 3: EBNF Definitions
 
-program :== '@@PROGRAM:' , white space , identifier , '@@' , white space , 'import' , white space , ':: main ::' ,
+program = '@@PROGRAM:' , white space , identifier , '@@' , white space , 'import' , white space , ':: main ::' ,
 white space , { assignment , white space } , ':: /main ::'
 
 sign = '+' | '-'
