@@ -111,8 +111,45 @@ newlines when they span more than one line and spaces when they don't.
 
 Part 3: EBNF Definitions
 
-Program = '@@Program:' , whitespace , 'identifier' , '@@' , whitespace , 'import' , whitespace , ':: main ::'
-, program_source , ':: /main ::'
+program :== '@@PROGRAM:' , white space , identifier , '@@' , white space , 'import' , white space , ':: main ::' ,
+white space , { assignment , white space } , ':: /main ::'
+
+sign = '+' | '-'
+zero = '0'
+even-digit = '2' | '4' | '6' | '8'
+odd-digit = '1' | '3' | '5' | '7' | '9'
+digit = even-digit | odd-digit
+digits = | digit digits
+number = [sign] , digit , {zero|digit}
+integer = [sign] , digit , {digit}
+even-integer = [sign] , {digit} , even-digit
+odd-integer = [sign] , {digit} , odd-digit
+structured-integer = digit , {['_']digit}
+integer-range = number , [ ..number]
+integer-list = number , {,number | ..number}
+integer-set = ([integer-list])
+
+lchar = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' |
+'t' | 'u' | 'v' | 'w' | 'x' | 'y' | '$
+uchar = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' |
+'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | '$
+char = lchar | uchar | number | special-char
+special-char = '-' | '_' | '*' | '#' | '&' | '`' | '(|)' | '+' | ',' | '.' | '/' | ':' | ';' | '<' | '=' | '>' | '$'
+empty-symbol =
+
+identifier = char , { char | uchar | zero | digit }
+string = '"' , { all characters - '"' } , '"'
+assignment = identifier , white space , ':==' , white space , ( number | identifier | string )
+white space = ? white space characters ?
+all characters = ? all visible characters ?
+
+lhs = lchar{[-]}lchar|[-]number}
+sequence = empty-symbol | {char | lhs | option | repitition}
+rhs = sequence{|sequence}
+option = [rhs]
+repitition = {rhs}
+ebnf-rule = lhs=rhs
+ebnf-description = {ebnf-rule}
 
 Part 4: Acceptable Unicode within Source Code
 
