@@ -31,7 +31,14 @@ GUI Tools ::
 	the menu options
 
 Conversion Program ::
-	The concept is a conversion program built into the compiler
+	The concept is a conversion program built into the compiler (???)
 	- Convert from popular programming languages
 	- Port opensource Linux programs to our system
 	- Make porting other programs to our system easy
+
+Smart Terminal (CLI) ::
+	The concept is to have a powerful CLI that is part of the GUI
+	- 'F12' drops down a terminal window to provide Command Line functions
+	- Within Settings -> UI -> you should have the ability to use only CLI
+	this provides for the terminal to be the only UI you have executing in
+	fullscreen mode. 
