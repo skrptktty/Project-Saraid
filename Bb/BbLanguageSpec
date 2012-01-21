@@ -151,6 +151,17 @@ Part 3: EBNF Definitions
 program = '@@PROGRAM:' , white space , identifier , '@@' , white space , 'import' , white space , ':: main ::' ,
 white space , { assignment , white space } , ':: /main ::'
 
+syntax = {production}
+production = identifier "=" expression
+expression = term {"|" term}
+term = factor {factor}
+factor = identifier | string | "("expression")" | "["expression"]" | "{"expression"}"
+identifier = char {char | uchar | zero | digit}
+string = """ , {all characters - """} """
+assignment = identifier white space "=" white space ( number | identifier | string )
+white space = ? white space characters ?
+all characters = ? all visible characters ?
+
 sign = '+' | '-'
 zero = '0'
 even-digit = '2' | '4' | '6' | '8'
